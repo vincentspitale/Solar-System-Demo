@@ -68,7 +68,7 @@ public struct ModelView: UIViewRepresentable {
         // Use from-to to explicitly make a full rotation around z
         spin.fromValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: 0))
         spin.toValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: Float(CGFloat(2 * Double.pi))))
-        spin.duration = 60
+        spin.duration = 120
         spin.repeatCount = .infinity
         node.addAnimation(spin, forKey: "spin around")
     }
