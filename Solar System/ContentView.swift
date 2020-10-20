@@ -10,15 +10,12 @@ import SwiftUI
 struct ContentView: View {
     let celestialBodies = CelestialBody.loadSolarSystem()
     
-    let layout = [
-        GridItem(.adaptive(minimum: 150, maximum: 500))
-    ]
     
     var body: some View {
         NavigationView{
             ScrollView{
             VStack{
-            LazyVGrid(columns: layout){
+            VStack{
         ForEach(celestialBodies, id: \.id) {
             body in
             NavigationLink(
@@ -27,6 +24,7 @@ struct ContentView: View {
             }
                 .buttonStyle(RoundedButton(textColor: .primary, cornerRadius: 20))
             .padding(5)
+            .accessibility(label: Text(body.name))
         }
         }
             .padding()
