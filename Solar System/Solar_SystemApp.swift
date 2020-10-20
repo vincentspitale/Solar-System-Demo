@@ -15,3 +15,4 @@ struct Solar_SystemApp: App {
         }
     }
 }
+
