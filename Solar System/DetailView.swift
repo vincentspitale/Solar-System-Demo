@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    var celestialBody: CelestialBody
+    @State var celestialBody: CelestialBody
     
     var body: some View {
         ScrollView{

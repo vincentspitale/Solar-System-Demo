@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let celestialBodies = CelestialBody.loadSolarSystem()
+    @State var celestialBodies = CelestialBody.loadSolarSystem()
     
     
     var body: some View {
