@@ -18,6 +18,8 @@ struct ContentView: View {
             VStack{
         ForEach(celestialBodies, id: \.id) {
             body in
+            
+            
             NavigationLink(
                 destination: DetailView(celestialBody: body)) {
                 Preview(celestialBody: body)
