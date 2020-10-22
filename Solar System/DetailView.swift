@@ -15,6 +15,7 @@ struct DetailView: View {
         VStack{
                 ModelView(filePath: Bundle.main.url(forResource: celestialBody.name, withExtension: "usdz"), isRotating: true)
                     .aspectRatio(contentMode: .fit)
+                    .accessibility(label: Text(celestialBody.name + " Model"))
             
             HStack{
                 Text("Radius")
