@@ -11,20 +11,18 @@ import SwiftUI
 
 public struct RoundedButton: ButtonStyle {
     @State var textColor: Color = .secondary
-    @State var cornerRadius: CGFloat = 0
-    @State var highContrast: Bool = false
+    @State var cornerRadius: CGFloat? = nil
     
     public func makeBody(configuration: Self.Configuration) -> some View {
         ZStack{
         configuration.label
             .font(Font.system(.subheadline).bold())
             .padding(10)
-            .foregroundColor(highContrast ? Color(.systemBackground) : textColor)
-            
+            .foregroundColor(textColor)
             
             .background(configuration.isPressed ? Color(.systemGray4) : Color(.systemGray6))
-            .contentShape(RoundedRectangle(cornerRadius: (cornerRadius != 0) ? cornerRadius: .greatestFiniteMagnitude))
-            .clipShape(RoundedRectangle(cornerRadius: (cornerRadius != 0) ? cornerRadius: .greatestFiniteMagnitude))
+            .contentShape(RoundedRectangle(cornerRadius: (cornerRadius != nil) ? cornerRadius!: .greatestFiniteMagnitude))
+            .clipShape(RoundedRectangle(cornerRadius: (cornerRadius != nil) ? cornerRadius!: .greatestFiniteMagnitude))
             .compositingGroup()
         }
     }
